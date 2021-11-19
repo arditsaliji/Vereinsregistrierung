@@ -37,6 +37,7 @@
             <td>${verein.getKategorie()}</td>
             <td>${verein.getStadt()}</td>
             <td><a href="editVereinForm.jsp?id=${verein.getId()}">Bearbeiten</a></td>
+            <td><a href="deleteVerein.jsp?id=${verein.getId()}">Löschen</a></td>
         </tr>
     </c:forEach>
 </table>

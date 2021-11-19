@@ -28,22 +28,22 @@
     <form action="editVerein.jsp" method="post" >
         <input type="hidden" name="id" value="<%=verein.getId() %>"/>
         <label>
-            Name: <input value="<%= verein.getName()%>"/>
+            Name: <input name="name" value="<%= verein.getName()%>"/>
         </label>
         <label>
-            Zweck: <input value="<%= verein.getZweck()%>"/>
+            Zweck: <input name="zweck" value="<%= verein.getZweck()%>"/>
         </label>
         <label>
-            Adresse: <input value="<%= verein.getAdresse()%>"/>
+            Adresse: <input name="adresse" value="<%= verein.getAdresse()%>"/>
         </label>
         <label>
-            Email: <input value="<%= verein.getEmail()%>"/>
+            Email: <input name="email" value="<%= verein.getEmail()%>"/>
         </label>
         <label>
-            Kategorie: <input value="<%= verein.getKategorie()%>"/>
+            Kategorie: <input name="kategorie" value="<%= verein.getKategorie()%>"/>
         </label>
         <label>
-            Stadt: <input value="<%= verein.getStadt()%>"/>
+            Stadt: <input name="stadt" value="<%= verein.getStadt()%>"/>
         </label>
 
         <input type="submit" value="Speichern" />

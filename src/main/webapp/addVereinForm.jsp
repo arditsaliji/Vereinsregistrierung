@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Verein" %><%--
   Created by IntelliJ IDEA.
   User: Markus Eisl
   Date: 19.11.2021
@@ -11,26 +11,29 @@
     <title>Title</title>
 </head>
 <body>
+<%
+    Verein verein = new Verein();
+%>
 <h1>Verein hinzufügen</h1>
-<form action="editVerein.jsp" method="post" >
+<form action="addVerein.jsp" method="post" >
     <input type="hidden" name="id" value=""/>
     <label>
-        Name: <input value=""/>
+        Name: <input name="name" value="<%=verein.getName() %>"/>
     </label>
     <label>
-        Zweck: <input value=""/>
+        Zweck: <input name="zweck" value="<%=verein.getZweck() %>"/>
     </label>
     <label>
-        Adresse: <input value=""/>
+        Adresse: <input name="adresse" value="<%=verein.getAdresse() %>"/>
     </label>
     <label>
-        Email: <input value=""/>
+        Email: <input name="email" value="<%=verein.getEmail() %>"/>
     </label>
     <label>
-        Kategorie: <input value=""/>
+        Kategorie: <input name="kategorie" value="<%=verein.getKategorie() %>"/>
     </label>
     <label>
-        Stadt: <input value=""/>
+        Stadt: <input name="stadt" value="<%=verein.getStadt() %>"/>
     </label>
 
     <input type="submit" value="Speichern" />

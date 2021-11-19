@@ -16,10 +16,10 @@ public class VereinService {
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
              Statement statement = connection.createStatement()) {
 
-            statement.executeUpdate("Update verein SET name = " + verein.getName() + ", zweck = " + verein.getZweck()
-                    + ", adresse = " + verein.getAdresse() + ", email = " + verein.getEmail()
-                    + ", kategorie = " + verein.getKategorie() + ", stadt = " + verein.getStadt()
-                    + " WHERE id = " + verein.getId());
+            statement.executeUpdate("Update verein SET name = '" + verein.getName() + "', zweck = '" + verein.getZweck()
+                    + "', adresse = '" + verein.getAdresse() + "', email = '" + verein.getEmail()
+                    + "', kategorie = '" + verein.getKategorie() + "', stadt = '" + verein.getStadt()
+                    + "' WHERE id = " + verein.getId());
         }
     }
 
@@ -32,12 +32,27 @@ public class VereinService {
         try (Connection connection = DriverManager
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
              Statement statement = connection.createStatement()) {
-            String query = "INSERT INTO verein(id, name, zweck, adresse, email, kategorie, stadt) " +
-                    "VALUES (" + id + "," + name + "," + zweck + "," + adresse + "," + email + "," + kategorie + "," + stadt + ");";
-            System.out.println(query);
-            statement.executeQuery(query);
+            String query = "INSERT INTO verein " +
+                    "VALUES (" + id + ",'" + name + "','" + zweck + "','" + adresse + "','" + email + "','" + kategorie + "','" + stadt + "');";
+            statement.executeUpdate(query);
 
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public void deleteVerein(int id) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try (Connection connection = DriverManager
+                .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
+             Statement statement = connection.createStatement()) {
+            String query = "DELETE FROM verein where id = " + id;
+            statement.executeUpdate(query);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
