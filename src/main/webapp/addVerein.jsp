@@ -1,5 +1,6 @@
 <%@ page import="Service.VereinService" %>
-<%@ page import="java.sql.SQLException" %><%--
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.Random" %><%--
   Created by IntelliJ IDEA.
   User: Markus Eisl
   Date: 19.11.2021
@@ -12,13 +13,13 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:useBean id="verein" class="model.Verein"/>
+<jsp:useBean id="verein" class="model.Verein" />
+<jsp:setProperty property="*" name="verein"/>
 
 <%
     VereinService service = new VereinService();
     try{
-        //hardgecodet, testzweck
-        service.addVerein(50, "'x'", "'x'", "'x'", "'x'", "'x'", "'x'");
+        service.addVerein(Math.abs(new Random().nextInt()/2), verein.getName(), verein.getZweck(), verein.getAdresse(), verein.getEmail(), verein.getKategorie(), verein.getStadt());
     } catch (Exception e) {
         e.printStackTrace();
     }

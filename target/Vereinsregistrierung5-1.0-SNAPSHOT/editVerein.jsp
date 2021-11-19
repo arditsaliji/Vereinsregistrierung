@@ -12,9 +12,10 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:useBean id="verein" class="model.Verein"/>
+    <jsp:useBean id="verein" class="model.Verein" />
+    <jsp:setProperty property="*" name="verein"/>
 
-    <%
+<%
         VereinService service = new VereinService();
         try {
             service.updateVerein(verein);
