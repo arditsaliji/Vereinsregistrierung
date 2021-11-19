@@ -17,7 +17,7 @@
 <%
     VereinService service = new VereinService();
     try{
-
+        //hardgecodet, testzweck
         service.addVerein(50, "'x'", "'x'", "'x'", "'x'", "'x'", "'x'");
     } catch (Exception e) {
         e.printStackTrace();

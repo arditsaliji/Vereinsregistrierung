@@ -15,22 +15,20 @@
     <title>Title</title>
 </head>
 <body>
+    <p>Helo world</p>
     <%
+        System.out.println("<p> hello2</p>");
         String filename = "c:\\myjdbcfile.csv";
-        String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "user_register";
         String driver = "com.mysql.jdbc.Driver";
-        String userName = "root";
-        String password = "root";
         Statement stmt;
         try
         {
             FileWriter fw = new FileWriter(filename);
-            fw.append("Employee Code");
-            fw.append(',');
-            fw.append("First Name");
-            fw.append(',');
-            fw.append("Last Name");
+            fw.append("ID");
+            fw.append(';');
+            fw.append("XX");
+            fw.append(';');
+            fw.append("XX");
             fw.append('\n');
 
             Class.forName(driver).newInstance();
@@ -40,6 +38,7 @@
             String query = "select * from verein";
             stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query);
+
 
             while(rs.next())
             {
@@ -53,7 +52,7 @@
             fw.flush();
             fw.close();
             connection.close();
-            System.out.println("<b>You are Successfully Created Csv file.</b>");
+            System.out.println("<b>You have successfully created Csv file.</b>");
         } catch (Exception e) {
             e.printStackTrace();
         }
