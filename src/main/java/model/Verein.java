@@ -3,6 +3,8 @@ package model;
 import java.io.Serializable;
 
 public class Verein implements Serializable {
+	public Verein() {
+	}
 
 	private static final long serialVersionUID = -8775754595661794167L;
 
@@ -68,6 +70,8 @@ public class Verein implements Serializable {
 		this.stadt = stadt;
 	}
 
-
+	public String addToCsv(){
+		return id + "," + name + "," + zweck + "," + adresse + "," + email + "," + kategorie + "," + stadt+ ",";
+	}
 }
 

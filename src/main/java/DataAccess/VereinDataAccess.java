@@ -18,8 +18,8 @@ public class VereinDataAccess  implements Serializable {
             e.printStackTrace();
         }
         try (Connection connection = DriverManager
-                    .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
-                    Statement statement = connection.createStatement()) {
+                .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
+             Statement statement = connection.createStatement()) {
 
             ResultSet resultSet = statement.executeQuery("SELECT * from verein");
             while (resultSet.next()) {
@@ -65,5 +65,24 @@ public class VereinDataAccess  implements Serializable {
             }
         }
         return null;
+    }
+
+    public boolean addVerein(int id, String name, String zweck, String adresse, String email, String kategorie, String stadt) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try (Connection connection = DriverManager
+                .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
+             Statement statement = connection.createStatement()) {
+
+            ResultSet resultSet = statement.executeQuery("INSERT INTO verein(id, name, zweck, adresse, email, kategorie, stadt) " +
+                    "VALUES (" + id + "," + name + "," + zweck + "," + adresse + "," + email + "," + kategorie + "," + stadt + ")");
+            System.out.println(resultSet.toString());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return true;
     }
 }
