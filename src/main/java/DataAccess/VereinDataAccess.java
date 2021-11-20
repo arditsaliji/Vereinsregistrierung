@@ -27,11 +27,11 @@ public class VereinDataAccess  implements Serializable {
                 String name = resultSet.getString("name");
                 String zweck = resultSet.getString("zweck");
                 String adresse = resultSet.getString("adresse");
-                String email = resultSet.getString("email");
+                String entstehung = resultSet.getString("entstehung");
                 String kategorie = resultSet.getString("kategorie");
-                String stadt = resultSet.getString("stadt");
+                String obmann = resultSet.getString("obmann");
 
-                Verein verein = new Verein(id, name, zweck, adresse, email, kategorie, stadt);
+                Verein verein = new Verein(id, name, zweck, adresse, entstehung, kategorie, obmann);
                 System.out.println(verein.getName());
                 vereine.add(verein);
             }
@@ -57,17 +57,17 @@ public class VereinDataAccess  implements Serializable {
                 String name = resultSet.getString("name");
                 String zweck = resultSet.getString("zweck");
                 String adresse = resultSet.getString("adresse");
-                String email = resultSet.getString("email");
+                String entstehung = resultSet.getString("entstehung");
                 String kategorie = resultSet.getString("kategorie");
-                String stadt = resultSet.getString("stadt");
+                String obmann = resultSet.getString("obmann");
 
-                return new Verein(id, name, zweck, adresse, email, kategorie, stadt);
+                return new Verein(id, name, zweck, adresse, entstehung, kategorie, obmann);
             }
         }
         return null;
     }
 
-    public boolean addVerein(int id, String name, String zweck, String adresse, String email, String kategorie, String stadt) {
+    public boolean addVerein(int id, String name, String zweck, String adresse, String entstehung, String kategorie, String obmann) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -77,8 +77,8 @@ public class VereinDataAccess  implements Serializable {
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
              Statement statement = connection.createStatement()) {
 
-            ResultSet resultSet = statement.executeQuery("INSERT INTO verein(id, name, zweck, adresse, email, kategorie, stadt) " +
-                    "VALUES (" + id + "," + name + "," + zweck + "," + adresse + "," + email + "," + kategorie + "," + stadt + ")");
+            ResultSet resultSet = statement.executeQuery("INSERT INTO verein(id, name, zweck, adresse, entstehung, kategorie, obmann) " +
+                    "VALUES (" + id + "," + name + "," + zweck + "," + adresse + "," + entstehung + "," + kategorie + "," + obmann + ")");
             System.out.println(resultSet.toString());
         } catch (SQLException throwables) {
             throwables.printStackTrace();

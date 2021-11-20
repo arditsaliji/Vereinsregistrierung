@@ -17,13 +17,13 @@ public class VereinService {
              Statement statement = connection.createStatement()) {
 
             statement.executeUpdate("Update verein SET name = '" + verein.getName() + "', zweck = '" + verein.getZweck()
-                    + "', adresse = '" + verein.getAdresse() + "', email = '" + verein.getEmail()
-                    + "', kategorie = '" + verein.getKategorie() + "', stadt = '" + verein.getStadt()
+                    + "', adresse = '" + verein.getAdresse() + "', entstehung = '" + verein.getEntstehung()
+                    + "', kategorie = '" + verein.getKategorie() + "', obmann = '" + verein.getObmann()
                     + "' WHERE id = " + verein.getId());
         }
     }
 
-    public void addVerein(int id, String name, String zweck, String adresse, String email, String kategorie, String stadt) {
+    public void addVerein(int id, String name, String zweck, String adresse, String entstehung, String kategorie, String obmann) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -33,7 +33,7 @@ public class VereinService {
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
              Statement statement = connection.createStatement()) {
             String query = "INSERT INTO verein " +
-                    "VALUES (" + id + ",'" + name + "','" + zweck + "','" + adresse + "','" + email + "','" + kategorie + "','" + stadt + "');";
+                    "VALUES (" + id + ",'" + name + "','" + zweck + "','" + adresse + "','" + entstehung + "','" + kategorie + "','" + obmann + "');";
             statement.executeUpdate(query);
 
 

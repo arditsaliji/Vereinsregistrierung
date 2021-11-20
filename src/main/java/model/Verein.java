@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 public class Verein implements Serializable {
 	public Verein() {
+		this.name = "";
+		this.adresse = "";
+		this.kategorie = "";
+		this.zweck = "";
+		this.obmann = "";
+		this.entstehung = "";
 	}
 
 	private static final long serialVersionUID = -8775754595661794167L;
@@ -12,19 +18,19 @@ public class Verein implements Serializable {
 	private String name;
 	private String zweck;
 	private String adresse;
-	private String email;
+	private String entstehung;
 	private String kategorie;
-	private String stadt;
+	private String obmann;
 
-	public Verein(int id, String name, String zweck, String adresse, String email, String kategorie, String stadt) {
+	public Verein(int id, String name, String zweck, String adresse, String entstehung, String kategorie, String obmann) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.zweck = zweck;
 		this.adresse = adresse;
-		this.email = email;
+		this.entstehung = entstehung;
 		this.kategorie = kategorie;
-		this.stadt = stadt;
+		this.obmann = obmann;
 	}
 
 	public int getId() {
@@ -51,11 +57,11 @@ public class Verein implements Serializable {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public String getEmail() {
-		return email;
+	public String getEntstehung() {
+		return entstehung;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEntstehung(String entstehung) {
+		this.entstehung = entstehung;
 	}
 	public String getKategorie() {
 		return kategorie;
@@ -63,15 +69,15 @@ public class Verein implements Serializable {
 	public void setKategorie(String kategorie) {
 		this.kategorie = kategorie;
 	}
-	public String getStadt() {
-		return stadt;
+	public String getObmann() {
+		return obmann;
 	}
-	public void setStadt(String stadt) {
-		this.stadt = stadt;
+	public void setObmann(String obmann) {
+		this.obmann = obmann;
 	}
 
 	public String addToCsv(){
-		return id + "," + name + "," + zweck + "," + adresse + "," + email + "," + kategorie + "," + stadt+ ",";
+		return id + "," + name + "," + zweck + "," + adresse + "," + entstehung + "," + kategorie + "," + obmann + ",";
 	}
 }
 

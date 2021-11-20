@@ -19,7 +19,7 @@
 <%
     VereinService service = new VereinService();
     try{
-        service.addVerein(Math.abs(new Random().nextInt()/2), verein.getName(), verein.getZweck(), verein.getAdresse(), verein.getEmail(), verein.getKategorie(), verein.getStadt());
+        service.addVerein(Math.abs(new Random().nextInt()/2), verein.getName(), verein.getZweck(), verein.getAdresse(), verein.getEntstehung(), verein.getKategorie(), verein.getObmann());
     } catch (Exception e) {
         e.printStackTrace();
     }

@@ -42,7 +42,7 @@
         </label>
         <br>
         <label>
-            Email: <input name="email" value="<%= verein.getEmail()%>"/>
+            Entstehung: <input name="entstehung" value="<%= verein.getEntstehung()%>"/>
         </label>
         <br>
         <label>
@@ -50,7 +50,7 @@
         </label>
         <br>
         <label>
-            Stadt: <input name="stadt" value="<%= verein.getStadt()%>"/>
+            Obmann: <input name="obmann" value="<%= verein.getObmann()%>"/>
         </label>
         <br>
         <input type="submit" class="betterButtons"value="Speichern" /></div>

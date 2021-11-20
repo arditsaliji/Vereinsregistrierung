@@ -24,9 +24,9 @@
         <th >Name</th>
         <th>Zweck</th>
         <th>Adresse</th>
-        <th>Email</th>
+        <th>Entstehung</th>
         <th>Kategorie</th>
-        <th>Stadt</th>
+        <th>Obmann</th>
         <th>Bearbeiten</th>
         <th>Löschen</th>
     </tr>
@@ -36,9 +36,9 @@
             <td>${verein.getName()}</td>
             <td>${verein.getZweck()}</td>
             <td>${verein.getAdresse()}</td>
-            <td>${verein.getEmail()}</td>
+            <td>${verein.getEntstehung()}</td>
             <td>${verein.getKategorie()}</td>
-            <td>${verein.getStadt()}</td>
+            <td>${verein.getObmann()}</td>
             <td><a href="editVereinForm.jsp?id=${verein.getId()}">Bearbeiten</a></td>
             <td><a href="deleteVerein.jsp?id=${verein.getId()}">Löschen</a></td>
         </tr>
@@ -49,7 +49,10 @@
 <input type="button" class="betterButtons" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
 <br>
 <br>
-<input type="button" class="betterButtons" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
+<input type="button" class="betterButtons" value="Tabelle als PDF runterladen" onclick="location.href='generatePdf.jsp'">
+<br>
+<br>
+<input type="button" class="betterButtons" value="Tabelle als CSV runterladen" onclick="location.href='generateCsv.jsp'">
 </div>
 </body>
 </html>

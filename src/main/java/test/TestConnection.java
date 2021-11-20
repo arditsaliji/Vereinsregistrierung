@@ -35,11 +35,11 @@ public class TestConnection {
 				String name = resultSet.getString("name");
 				String zweck = resultSet.getString("zweck");
 				String adresse = resultSet.getString("adresse");
-				String email = resultSet.getString("email");
+				String entstehung = resultSet.getString("entstehung");
 				String kategorie = resultSet.getString("kategorie");
-				String stadt = resultSet.getString("stadt");
+				String obmann = resultSet.getString("obmann");
 
-				Verein verein = new Verein(id, name, zweck, adresse, email, kategorie, stadt);
+				Verein verein = new Verein(id, name, zweck, adresse, entstehung, kategorie, obmann);
 				System.out.println(verein.getName());
 				vereine.add(verein);
 			}
