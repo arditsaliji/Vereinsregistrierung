@@ -24,7 +24,7 @@ public class CsvGenerator {
                     {verein.getName(), verein.getZweck(), verein.getKategorie(), verein.getAdresse(), verein.getEntstehung(), verein.getObmann() });
         }
 
-        File csvOutputFile = new File("/Users/arditsaliji/Desktop/Master-WINF/Service-Engineering/alle_vereine.csv");
+        File csvOutputFile = new File("C:\\Users\\Markus Eisl\\OneDrive\\Dokumente\\GitHub\\Vereinsregistrierung\\alle_vereine.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
             dataLines.stream()
                     .map(this::convertToCSV)

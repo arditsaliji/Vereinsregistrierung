@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/styles.css" />
 <html>
 <head>
     <title>Title</title>
@@ -14,9 +15,10 @@
 <%
     Verein verein = new Verein();
 %>
-<h1>Verein hinzufügen</h1>
+<h1 class="header">Verein hinzufügen</h1>
 <form action="addVerein.jsp" method="post" >
     <input type="hidden" name="id" value=""/>
+    <div class="flexbox">
     <label>
         Name: <input name="name" value="<%=verein.getName() %>"/>
     </label>
@@ -36,7 +38,8 @@
         Obmann: <input name="obmann" value="<%=verein.getObmann() %>"/>
     </label>
 
-    <input type="submit" value="Speichern" />
+    <input type="submit" class="betterButtons" value="Speichern" />
+    </div>
 </form>
 </body>
 </html>
