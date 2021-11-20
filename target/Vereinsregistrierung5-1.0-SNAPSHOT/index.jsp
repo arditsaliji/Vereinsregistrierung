@@ -21,7 +21,7 @@
         </label>
         <br>
         <br>
-        <input type="button" value="Login" onclick="location.href='viewVereine.jsp'">
+        <input type="button" class="betterButtons" value="Login" onclick="location.href='viewVereine.jsp'">
 
     </div>
 </body>

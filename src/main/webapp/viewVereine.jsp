@@ -46,10 +46,10 @@
 </table>
 <h1 class="header">Funktionen</h1>
 <div id="funcions">
-<input type="button" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
+<input type="button" class="betterButtons" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
 <br>
 <br>
-<input type="button" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
+<input type="button" class="betterButtons" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
 </div>
 </body>
 </html>

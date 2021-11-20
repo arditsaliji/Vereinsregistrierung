@@ -53,6 +53,29 @@ th, td {
     align-content: center;
 }
 
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid black 1px;
+    padding: 1%;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #c4c4c4;
+}
+.betterButtons{
+    border: black solid 1px;
+    border-radius: 10px;
+    background-color: #8f8f8f;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 25px;
+    width: 200px;
+}
+
+#form{}
+
 
 
 body{
