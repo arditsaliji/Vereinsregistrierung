@@ -14,18 +14,21 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.io.FileWriter" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<a href="addVereinForm.jsp">neuen verein hinzufügen</a>
-<h1>Alle Vereine1</h1>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/styles.css" />
 
-<table border="1" width="90%">
-    <tr>
-        <th>Name</th>
+
+<h1 class="header">Alle Vereine</h1>
+
+<table class="tableStyling">
+    <tr style="background-color: #c4c4c4!important;">
+        <th >Name</th>
         <th>Zweck</th>
         <th>Adresse</th>
         <th>Email</th>
         <th>Kategorie</th>
         <th>Stadt</th>
         <th>Bearbeiten</th>
+        <th>Löschen</th>
     </tr>
 
     <c:forEach items="${dataAccess.vereine}" var="verein">
@@ -41,7 +44,11 @@
         </tr>
     </c:forEach>
 </table>
-<a href="downloadFile.jsp">download as csv</a>
-<input type="button" value="Download as csv" onclick="">
+<h1 class="header">Funktionen</h1>
+<div id="funcions">
+<input type="button" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
+<br>
+<input type="button" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
+</div>
 </body>
 </html>

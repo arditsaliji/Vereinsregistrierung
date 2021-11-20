@@ -1,0 +1,57 @@
+.login{
+    font-family: Calibri;
+    margin-bottom: 1%;
+}
+
+.header{
+    font-family: Calibri;
+    text-align: center;
+    background-color: #9f9f9f !important;
+}
+
+
+#loginDiv{
+    margin-top: 2%;
+    font-family: Calibri;
+    text-align: center;
+    background-color: #c4c4c4 !important;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#funcions{
+    font-family: Calibri;
+    text-align: center;
+    background-color: #c4c4c4 !important;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 1px;
+}
+
+.tableStyling{
+    margin-left: auto;
+    margin-right: auto;
+    border: black solid 1px;
+    background-color: #dcdcdc;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+}
+
+
+
+body{
+    background-color: #eeeeee;
+    font-family: Calibri;
+}
