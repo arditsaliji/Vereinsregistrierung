@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/styles.css" />
 
 
-<h1 class="header">Alle Vereine1</h1>
+<h1 class="header">Alle Vereine</h1>
 
 <table class="tableStyling">
     <tr style="background-color: #c4c4c4!important;">
@@ -47,6 +47,7 @@
 <h1 class="header">Funktionen</h1>
 <div id="funcions">
 <input type="button" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
+<br>
 <br>
 <input type="button" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
 </div>

@@ -48,6 +48,7 @@
 <div id="funcions">
 <input type="button" value="Neuen Verein hinzufügen" onclick="location.href='addVereinForm.jsp'">
 <br>
+<br>
 <input type="button" value="Als CSV herunterladen" onclick="location.href='downloadFile.jsp'">
 </div>
 </body>
