@@ -11,7 +11,7 @@
 
 <h1 class = "header">Vereinsregistrierung</h1>
     <div id="loginDiv">
-        <label class="login">
+        <label class="login" >
             Username: <input />
         </label>
         <br>

@@ -53,6 +53,9 @@
 <br>
 <br>
 <input type="button" class="betterButtons" value="Tabelle als CSV runterladen" onclick="location.href='generateCsv.jsp'">
+<br>
+<br>
+<input type="button" class="betterButtons" value="Filtern" onclick="location.href='addFilterForm.jsp'">
 </div>
 </body>
 </html>
