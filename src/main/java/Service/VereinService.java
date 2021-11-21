@@ -5,7 +5,6 @@ import model.Verein;
 import java.sql.*;
 
 public class VereinService {
-
     public void updateVerein(Verein verein) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -14,14 +13,22 @@ public class VereinService {
         }
         try (Connection connection = DriverManager
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
-             Statement statement = connection.createStatement()) {
+             PreparedStatement pstmt = connection.prepareStatement("UPDATE verein SET name=?, zweck=?, adresse=?, entstehung=?, kategorie=?, obmann=? WHERE id=?")) {
 
-            statement.executeUpdate("Update verein SET name = '" + verein.getName() + "', zweck = '" + verein.getZweck()
-                    + "', adresse = '" + verein.getAdresse() + "', entstehung = '" + verein.getEntstehung()
-                    + "', kategorie = '" + verein.getKategorie() + "', obmann = '" + verein.getObmann()
-                    + "' WHERE id = " + verein.getId());
+            pstmt.setString(1, verein.getName());
+            pstmt.setString(2, verein.getZweck());
+            pstmt.setString(3, verein.getAdresse());
+            pstmt.setString(4, verein.getEntstehung());
+            pstmt.setString(5, verein.getKategorie());
+            pstmt.setString(6, verein.getObmann());
+            pstmt.setInt(7, verein.getId());
+
+            pstmt.executeUpdate();
         }
     }
+
+
+
 
     public void addVerein(int id, String name, String zweck, String adresse, String entstehung, String kategorie, String obmann) {
         try {

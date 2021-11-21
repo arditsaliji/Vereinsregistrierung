@@ -38,7 +38,9 @@
     align-content: center;
     background-color: #c4c4c4;">
             <h2 style="border-bottom: solid #8f8f8f 1px;padding-bottom: 1%;">Datenblatt</h2>
-        <label>
+            <input type="hidden" name="id" value="<%=verein.getId() %>"/>
+
+            <label>
             Name: <input name="name" value="<%= verein.getName()%>"/>
         </label>
         <br>
