@@ -44,20 +44,6 @@ public class VereinService {
         }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
-
-        try (Connection connection = DriverManager
-                .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
-             Statement statement = connection.createStatement()) {
-            String query = "INSERT INTO verein " +
-                    "VALUES (" + id + ",'" + name + "','" + kategorie + "','" + zweck + "','" + entstehung + "','" + adresse + "','" + obmann + "');";
-            statement.executeUpdate(query);
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
     }
 
     public void deleteVerein(int id) {
@@ -68,9 +54,9 @@ public class VereinService {
         }
         try (Connection connection = DriverManager
                 .getConnection("jdbc:mysql://s76.goserver.host:3306/web122_db9?useSSL=false", "web122_9", "service2021");
-             Statement statement = connection.createStatement()) {
-            String query = "DELETE FROM verein where id = " + id;
-            statement.executeUpdate(query);
+             PreparedStatement pstmt = connection.prepareStatement("DELETE FROM verein WHERE id=?")) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
