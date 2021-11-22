@@ -1,5 +1,4 @@
 <%@ page import="Service.VereinService" %>
-<%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.Random" %><%--
   Created by IntelliJ IDEA.
   User: Markus Eisl
@@ -8,6 +7,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% request.setCharacterEncoding("UTF-8");
+request.getQueryString();
+request.getAuthType();
+request.getHeaderNames();
+request.getRequestURI();%>
 <html>
 <head>
     <title>Title</title>
